@@ -33,9 +33,6 @@ def quick_sort_v2(data: List[int]) -> List[int]:
     pivot = data.pop(-1)
 
     left = [i for i in data if i <= pivot]
-    for i in data:
-        if i <= pivot:
-            print(i, end=" ")
     right = [i for i in data if i > pivot]
 
     left = quick_sort_v2(left)
@@ -44,7 +41,7 @@ def quick_sort_v2(data: List[int]) -> List[int]:
     return left + [pivot] + right
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     nums = [random.randint(0, 100) for i in range(10)]
     print(quick_sort(nums))
     print(quick_sort_v2(nums))
